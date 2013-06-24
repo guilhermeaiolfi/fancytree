@@ -62,7 +62,7 @@ $.ui.fancytree.prototype.widgetMethod1 = function(arg1){
  * Extension code
  */
 $.ui.fancytree.registerExtension("sampleextension", {
-	/** @type String Optional version information */
+	/* Optional version information */
 	version: "1.0.0",
 	/** Default options for this extension. */
 	options: {

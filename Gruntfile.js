@@ -29,6 +29,17 @@ module.exports = function (grunt) {
 		qunit: {
 			all: ["test/unit/test-core.html"]
 		},
+	    jsdoc: {
+	        dist: {
+	            src: ["src/*.js", "doc/README.md"],
+	            // http://usejsdoc.org/about-configuring-jsdoc.html#example
+	            options: {
+	                destination: "doc/jsdoc_grunt",
+//                    template: "bin/jsdoc3-moogle",
+	                verbose: true
+	            }
+	        }
+	    },
 		jshint: {
 			options: {
 				// Linting according to http://contribute.jquery.org/style-guide/js/
@@ -119,14 +130,16 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-connect");
     grunt.loadNpmTasks("grunt-contrib-csslint");
-	grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-qunit");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-exec");
     grunt.loadNpmTasks("grunt-html");
+    grunt.loadNpmTasks("grunt-jsdoc");
 
 	grunt.registerTask("server", ["connect:demo"]);
-	grunt.registerTask("test", ["jshint:beforeconcat", "qunit"]);
+    grunt.registerTask("test", ["jshint:beforeconcat", "qunit"]);
+//    grunt.registerTask("makejsdoc", ["jsdoc"]);
 	grunt.registerTask("travis", ["test"]);
 	grunt.registerTask("default", ["test"]);
 	grunt.registerTask("build", ["exec:tabfix",

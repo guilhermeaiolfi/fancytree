@@ -173,7 +173,8 @@ var FancytreeOptions = {};
  *    CALLBACK_NAME(event, data)
  * where `event` is a jQuery Event object and `data` is of type {@link HookContext}
  *
- * @see <a href="http://api.jquery.com/category/events/event-object/">jQuery Event</a>
+ * @see http://api.jquery.com/category/events/event-object
+ * 
  * @see HookContext
  *
  * @example $("#tree").fancytree({

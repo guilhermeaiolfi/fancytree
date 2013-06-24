@@ -3041,7 +3041,7 @@ $.widget("ui.fancytree",
 	 */
 	options:
 	{
-		/** @type {Boolean}  Make sure, active nodes are visible (expanded). */
+		/** Make sure, active nodes are visible (expanded). */
 		activeVisible: true,
 		ajax: {
 			type: "GET",
